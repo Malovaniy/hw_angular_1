@@ -1,0 +1,23 @@
+<!-- Завдання
+Необхідно відтворити функціонал як на відео Cenzorза допомогою Angular,а саме:
+•	При кліку на ADDдобавляти заборонене слово, яке відображатиметься в списку “Badwords”
+•	Якщо поле для добавлення слова не заповнене виводити відповідне повідомлення
+•	При кліку на Cenzorперевіряється чи є в textareaзаборонене слово, якщо так його заміняє на *, причому на ту кількість яка довжина слова
+•	Якщо textareaпорожня виводити повыдолення про заповнення поля -->
+
+<div class="parent">
+    <form name="forms">
+
+        <p><span class="badText">Bad words: <span class="inner"></span>{{bedWordsSpan}}</span></p>
+
+        <input type="text" class="text" name="words" [(ngModel)]="bedWords">
+        
+        <input type="button" name="add" class="formbut" value="add" (click)="add()">
+
+        <input type="button" class="formbut"  (click)="reset()" value="reset">
+        <br>
+        <textarea name="area" id="area" cols="30" rows="10" [(ngModel)]="valv"></textarea>
+        <br>
+        <input type="button" name="censor" class="censor" value="Censor" (click)="cenzor()">
+    </form>
+</div>
